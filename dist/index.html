@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Genshin Miliastra Docs</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: [
+                "Inter",
+                "Segoe UI",
+                "Roboto",
+                "Helvetica",
+                "Arial",
+                "sans-serif",
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="/dist/styles.css" />
+ </head>
+  <body class="bg-slate-100 text-slate-900">
+    <div class="flex min-h-screen flex-col">
+      <header class="bg-indigo-600 text-white shadow-sm">
+        <div
+          class="mx-auto flex w-full max-w-7xl flex-col gap-4 px-5 py-4 md:flex-row md:items-center md:justify-between"
+        >
+          <h1 class="text-xl font-semibold leading-tight">
+            Genshin Miliastra Docs
+          </h1>
+          <div
+            class="flex flex-wrap items-center gap-3 text-sm"
+            aria-label="Catalog controls"
+          >
+            <label class="flex items-center gap-2">
+              <span class="font-medium">Dataset</span>
+              <select
+                id="dataset"
+                class="h-10 rounded-md border border-white/40 bg-white px-2 text-slate-900 outline-none transition focus:border-white focus:bg-white"
+              >
+                <option value="knowledge">knowledge</option>
+                <option value="course">course</option>
+              </select>
+            </label>
+            <label class="flex items-center gap-2">
+              <span class="font-medium">Language</span>
+              <select
+                id="lang"
+                class="h-10 rounded-md border border-white/40 bg-white px-2 text-slate-900 outline-none transition focus:border-white focus:bg-white"
+              ></select>
+            </label>
+            <button
+              id="loadBtn"
+              class="inline-flex items-center rounded-md bg-white/90 px-4 py-2 font-medium text-indigo-600 transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              Load catalog
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="flex flex-1 flex-col overflow-hidden md:flex-row">
+        <aside
+          id="sidebar"
+          class="flex w-full max-w-md flex-shrink-0 flex-col border-b border-slate-200 bg-white shadow-sm md:max-w-xs md:border-b-0 md:border-r"
+        >
+          <div class="border-b border-slate-200 px-5 py-4">
+            <h2 class="text-base font-semibold text-slate-800">Catalog</h2>
+          </div>
+          <div id="catalog" class="flex-1 overflow-y-auto px-4 py-4"></div>
+        </aside>
+
+        <section
+          id="detailPanel"
+          class="flex flex-1 flex-col overflow-hidden bg-white shadow-inner"
+        >
+          <div class="border-b border-slate-200 px-6 py-4">
+            <h2 class="text-lg font-semibold text-slate-800">Detail</h2>
+            <div id="detailInfo" class="mt-2 text-sm text-slate-500"></div>
+          </div>
+          <div class="flex flex-1 flex-col overflow-hidden">
+            <div
+              id="detailContent"
+              class="prose prose-sm prose-slate max-w-none flex-1 overflow-y-auto px-6 py-6"
+            ></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/dist/app.js"></script>
+  </body>
+</html>

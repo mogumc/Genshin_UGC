@@ -1,0 +1,40 @@
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+#catalog {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(79, 70, 229, 0.35) transparent;
+}
+
+#catalog::-webkit-scrollbar {
+  width: 6px;
+}
+
+#catalog::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#catalog::-webkit-scrollbar-thumb {
+  background-color: rgba(79, 70, 229, 0.35);
+  border-radius: 9999px;
+}
+
+#detailContent pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+#detailContent img {
+  max-width: 100%;
+  height: auto;
+}
