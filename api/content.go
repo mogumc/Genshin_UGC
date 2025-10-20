@@ -23,5 +23,5 @@ func Content(c *gin.Context) {
 		})
 		return
 	}
-	c.Data(http.StatusOK, "application/json; charset=utf-8", []byte(content))
+	c.Data(http.StatusOK, "text/html; charset=utf-8", []byte(content))
 }
