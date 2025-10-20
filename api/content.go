@@ -1,6 +1,7 @@
 package api
 
 import (
+	"fmt"
 	"genshin/utils"
 	"net/http"
 
@@ -15,7 +16,8 @@ func Content(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid dataset"})
 		return
 	}
-	remoteURL := BaseURL + "/" + dataset + "/sea/" + lang + "/" + file + "/content.html"
+	remoteURL := BaseURL + "/" + dataset + "/" + BaseRe + "/" + lang + "/" + file + "/content.html"
+	fmt.Printf("访问网站 %s", remoteURL)
 	content := utils.Get(remoteURL)
 	if content == "" {
 		c.JSON(http.StatusNotFound, gin.H{
